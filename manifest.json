@@ -5,5 +5,13 @@
 "scope": "/censo-animal/",
 "start_url": "/censo-animal/",
 "name": "pwa-censo-animal",
-"short_name": "pwaCensoAnimal"
+"short_name": "pwaCensoAnimal",
+"icons": [
+    {
+        "src": "icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    }
+]
+
 }
