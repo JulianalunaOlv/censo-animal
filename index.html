@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="icon-192x192.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Pet Censo PG</title>
+    <link rel="icon" type="image/x-icon" href="img/icon-pata-cor-primaria.ico"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     
     <!-- modify -->
     <title>Pet Censo PG - 2025</title>
@@ -15,17 +19,134 @@
 <body>
     
     <header>
-        <h1>Pet Censo PG</h1>
+        <!--TOPO: LOGO/BRASÃO-->
+        <img src="img/PG-logo-horizontal-cor-inovacao-500x196.png"
+        class="img-header"
+
+        alt="Logo/Brasão PG, versão horizontal colorida">
+            <a class="btn btn-secondary botao-lista" href="lista.html" target="_blank" type="button" aria-placeholder="visualizar cadastros realizados" title="visuaizar cadastros">
+                <i class="bi bi-eye"></i>
+              </a>
     </header>
     <main>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste totam tempore ipsa perferendis, accusantium ex maiores corporis rem, distinctio optio neque id, aut iure quo placeat aliquid similique ab! Officia.
-        </p>
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+               
+                        <h1 class="mb-0">Formulário Censo Pet</h1>
+                </div>
+              </div>
+        </div>
+      
+        
+        <div class="container">
+            <form>
+              <!-- Nome e CPF -->
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="nome" class="form-label">Nome completo</label>
+                    <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="cpf" class="form-label">CPF</label>
+                    <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00">
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Código do SUS e Telefone -->
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="sus" class="form-label">Código do SUS</label>
+                    <input type="text" class="form-control" id="sus" placeholder="Digite o código do SUS">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="telefone" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control" id="telefone" placeholder="(00) 00000-0000">
+                  </div>
+                </div>
+              </div>
+          
+              <!-- E-mail e Data de Nascimento -->
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="dataNascimento" class="form-label">Data de nascimento</label>
+                    <input type="date" class="form-control" id="dataNascimento">
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Endereço -->
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="mb-3">
+                    <label for="cep" class="form-label">CEP</label>
+                    <input type="text" class="form-control" id="cep" placeholder="00000-000">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="rua" class="form-label">Rua</label>
+                    <input type="text" class="form-control" id="rua" placeholder="Nome da rua">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="mb-3">
+                    <label for="numero" class="form-label">Número</label>
+                    <input type="text" class="form-control" id="numero" placeholder="Número">
+                  </div>
+                </div>
+              </div>
+          
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="complemento" class="form-label">Complemento</label>
+                    <input type="text" class="form-control" id="complemento" placeholder="Apartamento, bloco, etc.">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="bairro" class="form-label">Bairro</label>
+                    <input type="text" class="form-control" id="bairro" placeholder="Nome do bairro">
+                  </div>
+                </div>
+              </div>
+
+               <!-- Botão de envio -->  
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="submit" class="btn btn-primary botao-avancar">Avançar</button>
+              </div>
+
+            </form>
+          </div>
+          
     </main>
-    <footer></footer>
+
+    <footer class="container-fluid">
+        <div class="container-footer">
+        <p class="rodape m-0">
+                © <abbr title="Município Estância Balneária de Praia Grande">MEBPG</abbr> Desenvolvido por <abbr title="Secretaria de Planejamento">SEPLAN</abbr> - Secretaria de Planejamento - 2025.
+        </p>
+        </div>
+    </footer>
 
     <!-- load service worker -->
     <script src="app.js"></script>
+    <script src="salvar.js"></script>
     <!-- /load service worker -->
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  </body>
 </html>

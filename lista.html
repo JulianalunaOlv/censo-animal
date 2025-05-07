@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Listagem de registros cadastrados</title>
+  <link rel="icon" type="image/x-icon" href="img/icon-pata-cor-primaria.ico"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  
+</head>
+<body>
+
+  <h1 class="mt-4 mb-4">Registros salvos no dispositivo</h1>
+
+<div class="container">
+  <div id="listaCenso" class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>SUS</th>
+          <th>Telefone</th>
+          <th>Email</th>
+          <th>Nascimento</th>
+          <th>Endereço</th>
+        </tr>
+      </thead>
+      <tbody id="dadosTabela"></tbody>
+    </table>
+  </div>
+</div>
+
+  <script>
+    const registros = JSON.parse(localStorage.getItem('censo')) || [];
+    const tbody = document.getElementById('dadosTabela');
+
+    if (registros.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="7" class="text-center">Nenhum dado encontrado.</td></tr>';
+    } else {
+      registros.forEach(pessoa => {
+        const tr = document.createElement('tr');
+
+        tr.innerHTML = `
+          <td>${pessoa.nome}</td>
+          <td>${pessoa.cpf}</td>
+          <td>${pessoa.sus}</td>
+          <td>${pessoa.telefone}</td>
+          <td>${pessoa.email}</td>
+          <td>${pessoa.dataNascimento}</td>
+          <td>${pessoa.rua}, ${pessoa.numero} ${pessoa.complemento ? '- ' + pessoa.complemento : ''}<br>
+              ${pessoa.bairro} - ${pessoa.cidade}/${pessoa.estado}<br>
+              CEP: ${pessoa.cep}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+  </script>
+</body>
+</html>
