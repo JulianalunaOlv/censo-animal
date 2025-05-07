@@ -1,10 +1,10 @@
 {
-"theme_color": "#028565",
+"theme_color": "#14679d",
 "background_color": "#FFFFFF",
 "display": "fullscreen",
 "scope": "/censo-animal/",
 "start_url": "/censo-animal/",
-"name": "pwa-censo-animal",
+"name": "Censo Animal PG",
 "short_name": "pwaCensoAnimal",
 "icons": [
     {
