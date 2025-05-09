@@ -71,7 +71,15 @@ h1 {
   display: flex;
 
 }
+h2 {
+  text-transform: uppercase;
+  color: var(--cor-primaria) !important;
+  font-weight: 600;
+  font-size: 2rem;
+  justify-content: center;
+  display: flex;
 
+}
 
 /*BOTOES*/
 
