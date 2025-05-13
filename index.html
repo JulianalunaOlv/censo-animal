@@ -24,40 +24,263 @@
         class="img-header"
 
         alt="Logo/Brasão PG, versão horizontal colorida">
-    
     </header>
     <main>
         <div class="container">
             <div class="d-flex justify-content-between align-items-center mb-4">
-               
-                        <h1 class="mb-0">Formulário Censo Pet</h1>
-                </div>
-              </div>
+              <h1 class="mb-0">Formulário Censo Pet</h1>
+            </div>
+          </div>
         </div>
-        <form  class="container" id="formulario">
-          <!-- Etapa 1: Dados Pessoais -->
-          <div class="etapa ativa" id="etapa1">
-            <div class="row row-cols-1 row-cols-lg-2">
-              <div class="col">
-                <div class="mb-3">
-                  <label class="form-label" for="nomeTipoSexo">Nome do Tipo de Sexo:</label>
-                  <input class="form-control" type="text" id="nomeTipoSexo" required>
+        <div class="container">
+          <!-- Barra de progresso -->
+          <div id="progresso" style="width: 100%; background-color: #eee; margin-bottom: 20px;">
+            <div id="progresso-barra" style="width: 10%; background-color: #007bff; color: white; text-align: center;">
+              Etapa 1 de 5
+            </div>
+          </div>
+        
+          <form id="formularioMultiEtapas" class="p-0">
+              <!-- Etapa 1: Dados Pessois -->
+              <div class="etapa ativa" id="etapa1">
+                <div class="card p-4">
+                  <div class="row row-cols-1">
+                    <h3>Dados Pessoais</h3>
+                  </div>
+                  <div class="row row-cols-1 row-cols-lg-2">  
+                    <div class="col">
+                      <div class="mb-3">
+                        <label for="cpf" class="form-label">CPF</label>
+                        <input type="number" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00">
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="mb-3">
+                        <label for="nomeCompleto" class="form-label">Nome completo</label>
+                        <input type="text" class="form-control" id="nomeCompleto" name="nome" placeholder="Digite seu nome completo" required>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="mb-3">
+                        <label for="nomeSocial" class="form-label">Nome Social</label>
+                        <input type="text" class="form-control" id="nomeSocial" name="nomeSocial" placeholder="Informe seu nome social">
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="mb-3">
+                        <label for="dataNascimento" class="form-label">Data de nascimento</label>
+                        <input type="date" class="form-control" id="dataNascimento" name="dataNascimento">
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com">
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="mb-3">
+                        <label for="celular" class="form-label">Celular</label>
+                        <input type="tel" class="form-control" id="celular" name="celular" placeholder="(00) 00000-0000">
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="mb-3">
+                        <label for="sus" class="form-label">Matrícula (cadastro na Usafa)</label>
+                        <input type="number" class="form-control" id="sus" name="sus" placeholder="Digite o número da matrícula">
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="mb-3">
+                        <label for="cep" class="form-label">CEP</label>
+                        <input type="number" class="form-control" id="cep" name="cep" placeholder="00000-000">
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="mb-3">
+                        <label for="rua" class="form-label">Rua</label>
+                        <input type="text" class="form-control" id="rua" name="rua" placeholder="Nome da rua">
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="mb-3">
+                        <label for="numero" class="form-label">Número</label>
+                        <input type="number" class="form-control" id="numero" name="numero" placeholder="Número">
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="mb-3">
+                        <label for="complemento" class="form-label">Complemento</label>
+                        <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Apartamento, bloco, etc.">
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="mb-3">
+                        <label for="bairro" class="form-label">Bairro</label>
+                        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Nome do bairro">
+                      </div>
+                    </div>
+                    <!-- Animal de estimação -->
+                    <div class="col">
+                      <div class="mb-3">
+                        <label class="form-label d-block">Possui animal de estimação?</label>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="animal" id="animalSim" value="sim" required>
+                          <label class="form-check-label" for="animalSim">Sim</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="animal" id="animalNao" value="nao" required>
+                          <label class="form-check-label" for="animalNao">Não</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    
+                  </div>
+                </div>
+              </div>
+              <!-- Etapa 2: Dados do Pet -->
+              <div class="etapa" id="etapa2">
+                <div class="card p-4">
+                  <div class="row row-cols-1 row-cols-lg-2">
+                      <h3>Dados do Pet</h3>
+                    </div>
+                      <div class="row row-cols-1 row-cols-lg-2">
+          
+                        <!-- Nome do pet -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label for="nomePet" class="form-label">Qual o nome do pet?</label>
+                            <input type="text" class="form-control" id="nomePet" name="nomePet" placeholder="Nome do pet" required>
+                          </div>
+                        </div>
+                    
+                                              <!-- Finalidade -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label d-block">Finalidade</label>
+                            <div id="finalidadePetContainer" class="d-flex flex-wrap gap-2"></div>
+                          </div>
+                        </div>
+
+                                            
+                                                <!-- Ano de nascimento -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label d-block">Ano de nascimento</label>
+                            <div id="AnoDeNascimentoPetContainer" class="d-flex flex-wrap gap-2"></div>
+                          </div>
+                        </div>
+                    
+                        
+                        <!-- Porte do Pet -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label d-block">Porte do Pet</label>
+                            <div id="portePetContainer" class="d-flex flex-wrap gap-2"></div>
+                          </div>
+                        </div>
+
+                        <!-- Castrado -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label d-block">Castrado</label>
+                            <div id="castradoPetContainer" class="d-flex flex-wrap gap-2"></div>
+                          </div>
+                        </div>
+                                          
+                        <!-- Microchip -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label d-block">Microchip</label>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="microchip" value="Não" required>
+                              <label class="form-check-label">Não</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="microchip" value="Sim">
+                              <label class="form-check-label">Sim</label>
+                            </div>
+                          </div>
+                        </div>
+                    
+                        <!-- RGA -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label for="rga" class="form-label">Número do RGA</label>
+                            <input type="text" class="form-control" id="rga" name="rga" placeholder="Número do RGA (se tiver)">
+                          </div>
+                        </div>
+                    
+                        <!-- Sexo -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label d-block">Sexo</label>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="sexoPet" value="Fêmea" required>
+                              <label class="form-check-label">Fêmea</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="sexoPet" value="Macho">
+                              <label class="form-check-label">Macho</label>
+                            </div>
+                          </div>
+                        </div>
+                    
+                         <!-- Procedência -->
+                        <div class="col">
+                          <div class="mb-3">
+                            <label class="form-label d-block">Procedência</label>
+                            <div id="procedenciaPetContainer" class="d-flex flex-wrap gap-2"></div>
+                          </div>
+                        </div>
+                    
+                        <!-- Etapa: Espécie -->
+                      <div class="col">
+                        <div class="mb-3">
+                          <label class="form-label d-block">Espécie</label>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="especie[1]" id="canino" value="canino" required onchange="mostrarCamposEspecie()">
+                            <label class="form-check-label" for="canino">Canino</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="especie[1]" id="felino" value="felino" onchange="mostrarCamposEspecie()">
+                            <label class="form-check-label" for="felino">Felino</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+               </div> 
+              </div>
+          </form>
+          
+            <div class="container mt-4">
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="button" id="btnProsseguir" class="btn btn-primary">Prosseguir</button>
+                <button type="button" id="btnFinalizar" class="btn btn-success">Finalizar Cadastro</button>
+
+              </div> 
+            </div> 
+
+            <div class="container">
+              <div id="dadosArmazenadosContainer" style="margin-top: 2rem;">
+                <div class="row row-cols-1">
+                  <div class="card">
+                    <h3>Cadastros Armazenados</h3>
+                    <div id="listaCadastros"></div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                      <button type="button" id="btnSincronizar" class="btn btn-success m-4">Sincronizar</button>
+                    </div>
+                  </div>
+
                 </div>
               </div>
           </div>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button class="btn btn-primary botao-avancar" type="submit">Salvar</button>
+      </div>
 
-            <button class="btn btn-secondary botao-avancar"  onclick="reenviarPendentes()">Reenviar Pendentes</button>
-          </div>
-<hr>
-
-          <h2 class="mb-0">Dados Armazenados</h2>
-          <ul id="listaDados"></ul>
-      </form>
- 
-
+        
     </main>
+
 
     <footer class="container-fluid">
         <div class="container-footer">
@@ -66,425 +289,15 @@
         </p>
         </div>
     </footer>
-  
-    <script>
-          if (!window.indexedDB) {
-            console.error("Este navegador não suporta IndexedDB.");
-          }
-      
-          let db;
-          // Use uma nova versão do banco de dados para que onupgradeneeded seja acionado
-          const request = indexedDB.open("BancoRespostasTiposSexo", 2); // Versão 2
-      
-          request.onerror = function(event) {
-            console.error("Erro ao abrir o banco de dados", event);
-          };
-      
-          request.onupgradeneeded = function(event) {
-            db = event.target.result;
-            
-            // Remove a loja antiga 'respostas' se ela existir da versão 1
-            if (event.oldVersion < 2 && db.objectStoreNames.contains("respostas")) {
-                db.deleteObjectStore("respostas");
-                console.log("Loja 'respostas' removida (upgrade v2)");
-            }
-      
-            // Cria a nova loja para os dados dos tipos de sexo
-            if (!db.objectStoreNames.contains("tiposSexos")) {
-              // Usaremos um ID local auto-incrementado para gerenciar itens offline
-              let store = db.createObjectStore("tiposSexos", { keyPath: "localId", autoIncrement: true });
-              // Cria índice para o nome
-              store.createIndex("nomeTipoSexo", "nomeTipoSexo", { unique: false });
-              // Cria índice para o ID da API (poderá ser 0 ou null antes da sincronização)
-              store.createIndex("tipoSexoId", "tipoSexoId", { unique: false });
-            }
-      
-            // Cria/atualiza a loja para dados pendentes de sincronização
-            if (!db.objectStoreNames.contains("pendingSync")) {
-                // Usa um timestamp como ID para as requisições pendentes
-                db.createObjectStore("pendingSync", { keyPath: "id" });
-            }
-            console.log("Upgrade de banco de dados para a versão 2 concluído.");
-          };
-      
-          request.onsuccess = function(event) {
-            db = event.target.result;
-            console.log("Banco de dados aberto com sucesso (v2)");
-            carregarDados();
-            // Opcional: Tentar sincronizar ao abrir o app se houver itens pendentes
-             if ('serviceWorker' in navigator && 'SyncManager' in window) {
-                 navigator.serviceWorker.ready.then(registration => {
-                      registration.sync.register('sync-responses')
-                          .then(() => console.log('Background Sync agendado ao abrir app'))
-                          .catch(err => console.error('Falha ao agendar Background Sync ao abrir app:', err));
-                  }).catch(err => console.error('Service Worker não pronto para agendar sync:', err));
-             }
-          };
-      
-          // Função para salvar dados no IndexedDB local ('tiposSexos')
-          function salvarTipoSexoLocal(dado) {
-              return new Promise((resolve, reject) => {
-                  const transaction = db.transaction(["tiposSexos"], "readwrite");
-                  const store = transaction.objectStore("tiposSexos");
-                  
-                  const itemToSave = {
-                      nomeTipoSexo: dado.nomeTipoSexo,
-                      tipoSexoId: 0, // <-- Definido como 0 aqui
-                      dataCriacaoLocal: new Date().toISOString()
-                  };
-      
-                  const addRequest = store.add(itemToSave);
-      
-                  addRequest.onsuccess = (event) => {
-                      const localId = event.target.result;
-                      console.log("Tipo Sexo salvo localmente:", { ...itemToSave, localId: localId });
-                      resolve({ ...itemToSave, localId: localId });
-                  };
-      
-                  addRequest.onerror = (e) => {
-                      console.error("Erro ao salvar tipo sexo localmente", e);
-                      reject(e);
-                  };
-              });
-          }
-      
-      
-      //     // Função para salvar dados pendentes de sincronização no IndexedDB ('pendingSync')
-      //     function salvarParaSync(localItem) {
-      //         const transaction = db.transaction(["pendingSync"], "readwrite");
-      //         const store = transaction.objectStore("pendingSync");
-      //         
-      //         const dataToStore = {
-      //             id: Date.now(),
-      //             localId: localItem.localId,
-      //             timestamp: new Date().toISOString(),
-      //             method: 'POST',
-      //             apiEndpoint: 'https://localhost:44335/api/tiposexo/cadastrar',
-      //             data: {
-      //                  "tipoSexoId": 0, 
-      //                  "nomeTipoSexo": localItem.nomeTipoSexo
-      //              }
-      //         };
-      
-      //         const addRequest = store.add(dataToStore);
-      
-      //         addRequest.onsuccess = () => {
-      //             console.log("Dados salvos para sincronização offline:", dataToStore);
-      //             
-      //             if ('serviceWorker' in navigator && 'SyncManager' in window) {
-      //                 navigator.serviceWorker.ready.then(registration => {
-      //                     registration.sync.register('sync-responses')
-      //                         .then(() => {
-      //                             console.log('Background Sync registrado!');
-      //                         })
-      //                         .catch(err => {
-      //                             console.error('Falha ao registrar Background Sync:', err);
-      //                         });
-      //                 });
-      //             } else {
-      //                 console.warn('Background Sync não suportado ou Service Worker não pronto.');
-      //             }
-      //             carregarDados();
-      //         };
-      
-      //         addRequest.onerror = (e) => {
-      //             console.error("Erro ao salvar dados para sincronização offline", e);
-      //              carregarDados(); 
-      //         };
-      //     }
-      
-      // Função para salvar dados pendentes de sincronização no IndexedDB ('pendingSync')
-          function salvarParaSync(localItem) { 
-              console.log("salvarParaSync: >>> Iniciando salvamento para fila de sync para localId:", localItem.localId, "Nome:", localItem.nomeTipoSexo);
-              const transaction = db.transaction(["pendingSync"], "readwrite");
-              const store = transaction.objectStore("pendingSync");
-              
-              const syncEntryId = Date.now(); // Gerar ID da entrada da fila ANTES de criar o objeto
-              const dataToStore = {
-                  id: syncEntryId, // ID único para a REQUISIÇÃO de sync (timestamp)
-                  localId: localItem.localId, // Referência ao item local na loja tiposSexos
-                  timestamp: new Date().toISOString(),
-                  method: 'POST',
-                  apiEndpoint: 'https://localhost:44335/api/tiposexo/cadastrar',
-                  data: { 
-                       "tipoSexoId": 0, 
-                       "nomeTipoSexo": localItem.nomeTipoSexo
-                   }
-              };
-      
-              console.log("salvarParaSync: Objeto a ser adicionado na fila (syncId:", syncEntryId, "):", dataToStore);
-              const addRequest = store.add(dataToStore);
-      
-              addRequest.onsuccess = () => {
-                  console.log("salvarParaSync: ### Dados salvos com sucesso na fila pendingSync. syncId:", syncEntryId, "localId:", localItem.localId);
-                  
-                  if ('serviceWorker' in navigator && 'SyncManager' in window) {
-                      navigator.serviceWorker.ready.then(registration => {
-                          console.log("salvarParaSync: Service Worker pronto, tentando registrar sync.");
-                          registration.sync.register('sync-responses')
-                              .then(() => {
-                                  console.log('salvarParaSync: +++ Background Sync registrado com sucesso para tag "sync-responses".');
-                              })
-                              .catch(err => {
-                                  console.error('salvarParaSync: --- Falha ao registrar Background Sync:', err);
-                              });
-                      });
-                  } else {
-                      console.warn('salvarParaSync: !!! Background Sync não suportado ou Service Worker não pronto para registro.');
-                  }
-                  carregarDados(); // Atualiza a UI para mostrar o item como Pendente
-                  console.log("salvarParaSync: <<< Função concluída após sucesso na adição à fila.");
-              };
-      
-              addRequest.onerror = (e) => {
-                  console.error("salvarParaSync: --- Erro ao salvar dados para sincronização offline", e);
-                   carregarDados(); 
-                   console.log("salvarParaSync: <<< Função concluída após erro na adição à fila.");
-              };
-          }
-      
-          // Função para carregar os dados e exibi-los na tela
-          function carregarDados() {
-            const lista = document.getElementById("listaDados");
-            lista.innerHTML = "";
-            const transaction = db.transaction(["tiposSexos"], "readonly");
-            const store = transaction.objectStore("tiposSexos");
-            const request = store.openCursor(null, 'prev');
-      
-            request.onsuccess = function(event) {
-              const cursor = event.target.result;
-              if (cursor) {
-                const li = document.createElement("li");
-                li.textContent = `Nome: ${cursor.value.nomeTipoSexo} | API TipoSexoId: ${cursor.value.tipoSexoId || 'Pendente'}`; // Exibe 0 como 'Pendente' ainda
-                lista.appendChild(li);
-                cursor.continue();
-              } else {
-                   console.log("Todos os dados locais carregados.");
-               }
-            };
-             request.onerror = (e) => {
-                 console.error("Erro ao carregar dados do IndexedDB", e);
-             };
-          }
-      
-      // function reenviarPendentes() {
-      //     const transaction = db.transaction(["pendingSync"], "readonly");
-      //     const store = transaction.objectStore("pendingSync");
-      
-      //     const request = store.openCursor();
-      
-      //     request.onsuccess = async function(event) {
-      //         const cursor = event.target.result;
-      //         if (cursor) {
-      //             const item = cursor.value;
-      
-      //             try {
-      //                 const response = await fetch(item.apiEndpoint, {
-      //                     method: item.method,
-      //                     headers: {
-      //                         'Content-Type': 'application/json',
-      //                         'Accept': '*/*'
-      //                     },
-      //                     body: JSON.stringify(item.data)
-      //                 });
-      
-      //                 if (response.ok) {
-      //                     const apiData = await response.json();
-      //                     console.log("Reenvio bem-sucedido:", item, "Resposta da API:", apiData);
-      
-      //                     // Atualiza o tipoSexoId no IndexedDB
-      //                     const updateTransaction = db.transaction(["tiposSexos", "pendingSync"], "readwrite");
-      //                     const tiposStore = updateTransaction.objectStore("tiposSexos");
-      //                     const pendingStore = updateTransaction.objectStore("pendingSync");
-      
-      //                     const getLocalItem = tiposStore.get(item.localId);
-      //                     getLocalItem.onsuccess = () => {
-      //                         const localItem = getLocalItem.result;
-      //                         if (localItem) {
-      //                             localItem.tipoSexoId = apiData.tipoSexoId;
-      //                             tiposStore.put(localItem);
-      //                         }
-      //                     };
-      
-      //                     // Remove da fila
-      //                     pendingStore.delete(item.id);
-      
-      //                     updateTransaction.oncomplete = () => carregarDados();
-      //                 } else {
-      //                     const text = await response.text();
-      //                     console.warn("Erro ao reenviar item:", response.status, text);
-      //                 }
-      //             } catch (error) {
-      //                 console.error("Falha ao reenviar item (possível offline):", error);
-      //             }
-      
-      //             cursor.continue();
-      //         } else {
-      //             console.log("Reenvio de pendentes concluído.");
-      //         }
-      //     };
-      
-      //     request.onerror = function(e) {
-      //         console.error("Erro ao acessar itens pendentes:", e);
-      //     };
-      // }
-      
-      function reenviarPendentes() {
-          const transaction = db.transaction(["pendingSync"], "readonly");
-          const store = transaction.objectStore("pendingSync");
-          const request = store.getAll();
-      
-          request.onsuccess = async function(event) {
-              const items = event.target.result;
-      
-              if (!items.length) {
-                  console.log("Nenhum item pendente para reenviar.");
-                  return;
-              }
-      
-              for (const item of items) {
-                  try {
-                      const response = await fetch(item.apiEndpoint, {
-                          method: item.method,
-                          headers: {
-                              'Content-Type': 'application/json',
-                              'Accept': '*/*'
-                          },
-                          body: JSON.stringify(item.data)
-                      });
-      
-                      if (response.ok) {
-                          const apiData = await response.json();
-                          console.log("Reenvio bem-sucedido:", item, "Resposta da API:", apiData);
-      
-                          // Atualiza o tipoSexoId no IndexedDB
-                          const updateTransaction = db.transaction(["tiposSexos", "pendingSync"], "readwrite");
-                          const tiposStore = updateTransaction.objectStore("tiposSexos");
-                          const pendingStore = updateTransaction.objectStore("pendingSync");
-      
-                          const getLocalItem = tiposStore.get(item.localId);
-                          getLocalItem.onsuccess = () => {
-                              const localItem = getLocalItem.result;
-                              if (localItem) {
-                                  localItem.tipoSexoId = apiData.tipoSexoId;
-                                  tiposStore.put(localItem);
-                              }
-                          };
-      
-                          // Remove da fila
-                          pendingStore.delete(item.id);
-      
-                          updateTransaction.oncomplete = () => carregarDados();
-                      } else {
-                          const text = await response.text();
-                          console.warn("Erro ao reenviar item:", response.status, text);
-                      }
-                  } catch (error) {
-                      console.error("Falha ao reenviar item (possível offline):", error);
-                  }
-              }
-      
-              console.log("Reenvio de pendentes concluído.");
-          };
-      
-          request.onerror = function(e) {
-              console.error("Erro ao acessar itens pendentes:", e);
-          };
-      }
-      
-      
-          // Listener para o envio do formulário
-          document.getElementById("formulario").addEventListener("submit", async function(event) {
-            event.preventDefault();
-            const nomeTipoSexo = document.getElementById("nomeTipoSexo").value;
-            
-            if (nomeTipoSexo) {
-              const dadoParaSalvar = { 
-                nomeTipoSexo: nomeTipoSexo
-              };
-      
-              let localItem;
-              try {
-                  // 1. Salva localmente primeiro para exibição imediata e obter o localId
-                  localItem = await salvarTipoSexoLocal(dadoParaSalvar);
-              } catch (error) {
-                  console.error("Não foi possível salvar localmente:", error);
-                  alert("Erro ao salvar localmente. Verifique o console.");
-                  return;
-              }
-              
-              const apiEndpoint = 'https://localhost:44335/api/tiposexo/cadastrar'; 
-              const apiRequestBody = { 
-                  "tipoSexoId": 0, 
-                  "nomeTipoSexo": nomeTipoSexo
-              };
-      
-              // 2. Tenta enviar para a API
-              fetch(apiEndpoint, {
-                  method: 'POST', 
-                  headers: {
-                      'Content-Type': 'application/json',
-                      'Accept': '*/*'
-                  },
-                  body: JSON.stringify(apiRequestBody)
-              })
-              .then(async response => { 
-                  if (response.ok) {
-                       const apiData = await response.json();
-                      console.log('Dados enviados para a API com sucesso!');
-                       console.log('API retornou:', apiData);
-      
-                       const updateTransaction = db.transaction(["tiposSexos"], "readwrite");
-                       const store = updateTransaction.objectStore("tiposSexos");
-                       const getRequest = store.get(localItem.localId);
-      
-                       getRequest.onsuccess = (event) => {
-                           const itemToUpdate = event.target.result;
-                           if (itemToUpdate) {
-                               itemToUpdate.tipoSexoId = apiData.tipoSexoId; 
-                               const putRequest = store.put(itemToUpdate); 
-                               putRequest.onsuccess = () => {
-                                   console.log('Registro local (ID:', localItem.localId, ') atualizado com API ID:', apiData.tipoSexoId);
-                                   carregarDados(); 
-                               };
-                               putRequest.onerror = (e) => console.error('Erro ao atualizar registro local com API ID', e);
-                           } else {
-                               console.warn('Registro local não encontrado para atualização com API ID:', localItem.localId);
-                           }
-                       };
-                       getRequest.onerror = (e) => console.error('Erro ao buscar registro local para atualização', e);
-      
-                   } else {
-                       const errorText = await response.text();
-                       console.warn(`Erro na resposta da API (${response.status}): ${errorText}. Salvando para sincronização offline.`);
-                       salvarParaSync(localItem);
-                   }
-              })
-              .catch(error => {
-                  console.error('Falha na requisição de rede (offline ou outro erro):', error);
-                  console.log('Salvando dados para sincronização offline.');
-                  salvarParaSync(localItem);
-              });
-      
-              event.target.reset();
-            }
-          });
-      
-          // Listener para mensagens do Service Worker (opcional, para saber quando a sync terminou)
-          if ('serviceWorker' in navigator) {
-              navigator.serviceWorker.addEventListener('message', event => {
-                  if (event.data && event.data.type === 'sync-complete') {
-                      console.log('Mensagem do SW: Sincronização concluída para local ID:', event.data.localId, 'com API ID:', event.data.apiId);
-                       carregarDados(); 
-                  }
-              });
-          }
-      
-        </script>
-      
-    <!-- load service worker -->
+
     <script src="app.js"></script>
-    <!-- /load service worker -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+          .then(() => console.log('Service Worker registrado'));
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>  
   </body>
 </html>

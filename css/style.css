@@ -46,6 +46,7 @@ main {
   min-height: 100vh;
   background-color: var(--cor-main);
   padding-top: 1rem;
+  padding: 5%;
 }
 
 /*TOPO*/
@@ -66,27 +67,49 @@ h1 {
   text-transform: uppercase;
   color: var(--cor-primaria) !important;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.6rem;
   justify-content: center;
   display: flex;
 
 }
-h2 {
-  text-transform: uppercase;
-  color: var(--cor-primaria) !important;
-  font-weight: 600;
-  font-size: 2rem;
-  justify-content: center;
-  display: flex;
 
+h3 {
+  color: var(--cor-layout-base) !important;
+  padding: 2%;
+  font-weight: bold;
 }
+
+.card {
+  box-shadow: 2px 2px 2px #d1d1d1;
+  padding: 0%;
+}
+
 
 /*BOTOES*/
 
+.fade {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  height: auto;
+}
+
+#botoesNavegacao,
+#botaoSalvarContainer {
+  transition: all 0.3s ease;
+}
+
+
+
 .btn.botao-avancar {
   background-color:var(--cor-layout-base) !important;
-  font-weight: 600;
-  padding: 0.8rem;
+  font-weight: 400;
+  padding: 0.5rem;
   border: none;
 }
 
@@ -95,22 +118,6 @@ h2 {
 
 }
 
-a.botao-lista {
-  background-color: var(--cor-primaria);
-  padding: 1rem;
-  margin: 2rem;
-  border: none;
-  font-size: 1rem;
-  display: flex;
-  justify-content: end;
-  align-items: end;
-
-}
-
-a.botao-lista:hover {
-  background-color: var(--cor-secundaria);
-
-}
 
 form { 
   padding: 1rem;
@@ -135,6 +142,32 @@ footer.container-fluid {
   text-shadow: 1px 1px 1px #363636;
   color: #AAD400;
 }
+
+
+/*ETAPA PROGRESSO*/
+.etapa {
+  display: none;
+}
+.etapa.ativa {
+  display: block;
+}
+
+#progresso {
+  height: 25px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+#progresso-barra {
+  height: 100%;
+  background-color: var(--cor-primaria);
+  width: 0%;
+  transition: width 0.3s;
+  color: white;
+  text-align: center;
+}
+
 
 
 /*__________________________RESPONSIVIDADE*/
