@@ -74,7 +74,7 @@
       
           let db;
           // Use uma nova versão do banco de dados para que onupgradeneeded seja acionado
-          const request = indexedDB.open("BancoRespostasTiposSexo", 1); // Versão 2
+          const request = indexedDB.open("BancoRespostasTiposSexo", 2); // Versão 2
       
           request.onerror = function(event) {
             console.error("Erro ao abrir o banco de dados", event);
@@ -84,10 +84,10 @@
             db = event.target.result;
             
             // Remove a loja antiga 'respostas' se ela existir da versão 1
-         //   if (event.oldVersion < 2 && db.objectStoreNames.contains("respostas")) {
-           //     db.deleteObjectStore("respostas");
-           //     console.log("Loja 'respostas' removida (upgrade v2)");
-         //   }
+         if (event.oldVersion < 2 && db.objectStoreNames.contains("respostas")) {
+         db.deleteObjectStore("respostas");
+           console.log("Loja 'respostas' removida (upgrade v2)");
+          }
       
             // Cria a nova loja para os dados dos tipos de sexo
             if (!db.objectStoreNames.contains("tiposSexos")) {
