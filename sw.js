@@ -1,36 +1,45 @@
-let cacheName = 'cache-v1';
+const cacheName = 'pet-censo-animal-v1';
+const assets = [
+  '/',
+  '/index.html',  
+  '/etapa1.html',
+  '/etapa2.html',
+  '/etapa3.html',
+  '/etapa4.html',
+  '/etapa5.html',
+  '/manifest.json',
+  '/css/style.css',
+  //'/js/router.js',  
+  '/js/db.js',
+  '/js/app.js',
+  // Adicione aqui ícones usados no manifest, se houver
+  '/img/icons/icon-192.png',
+  '/img/icons/icon-512.png'
+];
 
-self.addEventListener('install', (e) => {
-
-  let cache = caches.open(cacheName).then((c) => {
-    c.addAll([
-      // anything
-      '/',
-      '/index.html',
-      'css/style.css',
-      '/sw.js',
-      '/app.js',
-      '/manifest.json',
-      // '.vscode/launch.json'
-    ]);
-  });
-
-  e.waitUntil(cache);
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(cacheName).then(cache => {
+      return cache.addAll(assets);
+    })
+  );
 });
 
-self.addEventListener('fetch', function (event) {
-
-  event.respondWith(
-
-    caches.open(cacheName).then(function (cache) {
-      return cache.match(event.request).then(function (response) {
-        return response || fetch(event.request).then(function (response) {
-          cache.put(event.request, response.clone());
-          return response;
-        });
-      });
-    })
-
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(
+        keys.filter(key => key !== cacheName)
+            .map(key => caches.delete(key))
+      )
+    )
   );
+});
 
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request).then(cachedResponse => {
+      return cachedResponse || fetch(event.request);
+    })
+  );
 });

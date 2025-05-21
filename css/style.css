@@ -46,6 +46,7 @@ main {
   min-height: 100vh;
   background-color: var(--cor-main);
   padding-top: 1rem;
+  padding: 5%;
 }
 
 /*TOPO*/
@@ -66,55 +67,105 @@ h1 {
   text-transform: uppercase;
   color: var(--cor-primaria) !important;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.6rem;
   justify-content: center;
   display: flex;
+  padding: 2%;
 
 }
-h2 {
-  text-transform: uppercase;
-  color: var(--cor-primaria) !important;
-  font-weight: 600;
-  font-size: 2rem;
-  justify-content: center;
-  display: flex;
 
+
+h2 {
+  color: var(--cor-layout-base) !important;
+  padding: 2%;
+  font-weight: bold;
+}
+
+h3 {
+  color: var(--cor-texto-escuro) !important;
+  padding: 2%;
+  font-weight: bold;
+}
+
+
+.card {
+  box-shadow: 2px 2px 2px #d1d1d1;
+  padding: 0%;
+}
+
+label.form-label {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+legend {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.toast {
+  position: fixed;
+  bottom: 50%;
+  right: 70px;
+  min-width: 250px;
+  background-color: red;
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 /*BOTOES*/
 
-.btn.botao-avancar {
+.btn.botao-prosseguir {
   background-color:var(--cor-layout-base) !important;
-  font-weight: 600;
-  padding: 0.8rem;
+  font-weight: 400;
+  padding: 0.5rem;
   border: none;
 }
 
-.botao-avancar:hover {
+.botao-prosseguir:hover {
   background-color: var(--cor-secundaria) !important;
 
 }
-
-a.botao-lista {
-  background-color: var(--cor-primaria);
-  padding: 1rem;
-  margin: 2rem;
+.btn.botao-voltar {
+  background-color:var(--cor-texto-escuro) !important;
+  font-weight: 400;
+  padding: 0.5rem;
   border: none;
-  font-size: 1rem;
-  display: flex;
-  justify-content: end;
-  align-items: end;
+}
+
+.botao-voltar:hover {
+  background-color: var(--cor-primaria) !important;
 
 }
 
-a.botao-lista:hover {
-  background-color: var(--cor-secundaria);
+.btn.botao-sincronizar {
+  background-color:var(--cor-texto-titulo-navegacao-menu) !important;
+  font-weight: 400;
+  padding: 0.5rem;
+  border: none;
+}
+
+.botao-sincronizar:hover {
+  background-color: var(--cor-primaria) !important;
 
 }
 
-form { 
-  padding: 1rem;
-}
+
 
 /*RODAPE*/
 footer.container-fluid {
@@ -135,6 +186,32 @@ footer.container-fluid {
   text-shadow: 1px 1px 1px #363636;
   color: #AAD400;
 }
+
+
+/*ETAPA PROGRESSO*/
+.etapa {
+  display: none;
+}
+.etapa.ativa {
+  display: block;
+}
+
+#progresso {
+  height: 25px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+#progresso-barra {
+  height: 100%;
+  background-color: var(--cor-primaria);
+  width: 100%;;
+  transition: width 0.3s;
+  color: white;
+  text-align: center;
+}
+
 
 
 /*__________________________RESPONSIVIDADE*/
